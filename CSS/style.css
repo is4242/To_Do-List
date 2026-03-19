@@ -53,10 +53,10 @@
             cursor: pointer;
             transition: 0.3s;
         }
-/* 
+
         button:hover {
             background-color: #4547d1;
-        } */
+        }
 
         /* شكل المهام */
         .task-item {
@@ -67,7 +67,14 @@
             color: #555;
         }
 
-        .task-item input {
+        .line{
+               text-decoration: line-through; /* هذا هو السطر المسؤول عن شطب الكلمة */
+    text-decoration-color: black;    /* (اختياري) إذا أردت تغيير لون الخط فقط */
+    text-decoration-thickness: 2px;
+        }
+
+   .task-item input {
             margin-right: 15px;
+            cursor: pointer;
         }
     
