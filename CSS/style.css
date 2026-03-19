@@ -1,4 +1,3 @@
-        /* إعدادات الصفحة العامة */
         body {
             background-color: #f0f2f5; /* لون خلفية هادئ */
             display: flex;
@@ -9,12 +8,11 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* الحاوية الرئيسية */
         .box {
             background-color: #ffffff;
             width: 400px;
             min-height: 500px;
-            border-radius: 20px; /* زوايا منحنية */
+            border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* ظل ناعم */
             padding: 30px;
         }
@@ -29,7 +27,6 @@
             padding-bottom: 10px;
         }
 
-        /* منطقة الإدخال */
         .input-group {
             display: flex;
             gap: 10px;
@@ -58,23 +55,43 @@
             background-color: #4547d1;
         }
 
-        /* شكل المهام */
-        .task-item {
-            display: flex;
-            align-items: center;
-            padding: 12px;
-            border-bottom: 1px solid #f9f9f9;
-            color: #555;
-        }
-
-        .line{
-               text-decoration: line-through; /* هذا هو السطر المسؤول عن شطب الكلمة */
-    text-decoration-color: black;    /* (اختياري) إذا أردت تغيير لون الخط فقط */
-    text-decoration-thickness: 2px;
-        }
+   
 
    .task-item input {
             margin-right: 15px;
             cursor: pointer;
         }
     
+.task-item {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px;
+}
+
+.delete-btn {
+    background-color: #ff4d4d; 
+    color: white;       
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.line span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+@keyframes heavy-jiggle {
+    0% { transform: translateX(0) rotate(0deg); }
+    20% { transform: translateX(-4px) rotate(-15deg); } 
+    40% { transform: translateX(4px) rotate(15deg); }   
+    60% { transform: translateX(-4px) rotate(-15deg); }
+    80% { transform: translateX(4px) rotate(15deg); }
+    100% { transform: translateX(0) rotate(0deg); }   
+}
+
+.delete-btn:hover i {
+    animation: heavy-jiggle 0.2s ease-in-out 1;
+}
