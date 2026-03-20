@@ -2,8 +2,12 @@ let task = document.querySelectorAll(".task-item")
 let checkbox = document.querySelectorAll(".checkbox")
 let Dalte  = document.querySelectorAll(".delete-btn")
 let list = document.querySelector(".task-list")
+let addtask = document.querySelector(".add-task")
+let btn_add = document.querySelector(".add-btn")
 
-function cr(hello){
+
+function add_takes(hello){
+    if(addtask.value === "")return;
     let tasitem = document.createElement("div")
     tasitem.className = "task-item"
 
@@ -27,19 +31,28 @@ button.addEventListener("click", () => {
             tasitem.remove();
         });
     });
-    
+    addtask.value = ""
 list.appendChild(tasitem)
 tasitem.appendChild(input)
 tasitem.appendChild(span)
 tasitem.appendChild(button)
 button.appendChild(icon)
 
-console.log(button)
 
 
 }
 
-cr("ie")
+btn_add.addEventListener("click",()=>{
+    add_takes(addtask.value)
+})
+
+document.body.addEventListener("keydown",(e)=>{
+    if(e.key === "Enter"){
+        add_takes(addtask.value)
+    }
+})
+
+
 
 checkbox.forEach(button => {
    button.addEventListener("click",(e)=>{

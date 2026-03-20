@@ -39,6 +39,8 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             outline: none;
+                font-size: 17px;
+
         }
 
         button {
