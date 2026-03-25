@@ -1,0 +1,99 @@
+        body {
+            background-color: #f0f2f5; /* لون خلفية هادئ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .box {
+            background-color: #ffffff;
+            width: 400px;
+            min-height: 500px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* ظل ناعم */
+            padding: 30px;
+        }
+
+        .titles {
+            font-family: "Playfair Display", serif;
+            font-size: 38px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+                font-size: 17px;
+
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #5d5fef;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #4547d1;
+        }
+
+   
+
+   .task-item input {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+    
+.task-item {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px;
+}
+
+.delete-btn {
+    background-color: #ff4d4d; 
+    color: white;       
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.line span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+@keyframes heavy-jiggle {
+    0% { transform: translateX(0) rotate(0deg); }
+    20% { transform: translateX(-4px) rotate(-15deg); } 
+    40% { transform: translateX(4px) rotate(15deg); }   
+    60% { transform: translateX(-4px) rotate(-15deg); }
+    80% { transform: translateX(4px) rotate(15deg); }
+    100% { transform: translateX(0) rotate(0deg); }   
+}
+
+.delete-btn:hover i {
+    animation: heavy-jiggle 0.2s ease-in-out 1;
+}
