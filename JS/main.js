@@ -5,11 +5,6 @@ let list = document.querySelector(".task-list")
 let addtask = document.querySelector(".add-task")
 let btn_add = document.querySelector(".add-btn")
 
-<<<<<<< HEAD
-
-function add_takes(hello){
-    if(addtask.value === "")return;
-=======
 function displayTask(){
     let tasks = JSON.parse(localStorage.getItem("allTasks")) || [];
     const list = document.querySelector(".task-list")
@@ -20,7 +15,6 @@ tasks.forEach(item => {
 
 function add_takes(hello){
     if(!hello)return;
->>>>>>> DIR
     let tasitem = document.createElement("div")
     tasitem.className = "task-item"
 
@@ -33,14 +27,6 @@ let input = document.createElement("input")
 
 let button = document.createElement("button")
     button.className = "delete-btn"
-<<<<<<< HEAD
-
-    let icon = document.createElement("i")
-    icon.className = "fa-solid fa-trash"
-input.addEventListener("change", () => {
-        tasitem.classList.toggle("line");
-    });
-=======
 let score =1;
     let icon = document.createElement("i")
     icon.className = "fa-solid fa-trash"
@@ -61,36 +47,17 @@ localStorage.removeItem("d")
         
     }
   
->>>>>>> DIR
 button.addEventListener("click", () => {
         tasitem.addEventListener("transitionend", () => {
             tasitem.remove();
         });
     });
-<<<<<<< HEAD
-    addtask.value = ""
-=======
 
->>>>>>> DIR
 list.appendChild(tasitem)
 tasitem.appendChild(input)
 tasitem.appendChild(span)
 tasitem.appendChild(button)
 button.appendChild(icon)
-<<<<<<< HEAD
-
-
-
-}
-
-btn_add.addEventListener("click",()=>{
-    add_takes(addtask.value)
-})
-
-document.body.addEventListener("keydown",(e)=>{
-    if(e.key === "Enter"){
-        add_takes(addtask.value)
-=======
 }
 
 
@@ -122,7 +89,6 @@ document.body.addEventListener("keydown",(e)=>{
 
     addtask.value = ""; 
 
->>>>>>> DIR
     }
 })
 
@@ -132,26 +98,12 @@ checkbox.forEach(button => {
    button.addEventListener("click",(e)=>{
     let targetTask = e.target.parentElement;
     targetTask.classList.toggle("line")
-<<<<<<< HEAD
-=======
     localStorage.setItem("claslist",'kidk')
->>>>>>> DIR
     
 })
 });
  
 Dalte.forEach(button => {
-<<<<<<< HEAD
-   button.addEventListener("click",(e)=>{
-    let targetTask = e.target.closest(".task-item");
-
-    if(targetTask)
-        {
-   targetTask.remove()
-}   
-})
-});
-=======
     button.addEventListener("click", (e) => {
         let targetTask = e.target.closest(".task-item");
         
@@ -175,4 +127,3 @@ displayTask()
 
 
 // i have do loop to the remove word to storge array
->>>>>>> DIR
