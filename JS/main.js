@@ -27,30 +27,43 @@ let input = document.createElement("input")
 
 let button = document.createElement("button")
     button.className = "delete-btn"
-let score =1;
+// let score =1;
     let icon = document.createElement("i")
     icon.className = "fa-solid fa-trash"
-    
+           let l =  localStorage.getItem("classtorge")
 input.addEventListener("change", () => {
-    localStorage.setItem("d",`line`) 
+    localStorage.setItem("classtorge",`line`) 
 
-        tasitem.classList.toggle("line"); 
+        tasitem.classList.toggle(`line`); 
   if(!input.checked){
-localStorage.removeItem("d")
+localStorage.removeItem("classtorge")
    }
         // score++
     });
-       let l =  localStorage.getItem("d")
      if(l){
         tasitem.classList.add(l)
         input.checked=true
         
     }
   
-button.addEventListener("click", () => {
-        tasitem.addEventListener("transitionend", () => {
+button.addEventListener("click", (event) => {
+    let targetIndex = Array.from(document.querySelectorAll("li")).indexOf(tasitem);
+let text = tasitem.innerText.trim();
             tasitem.remove();
-        });
+    let list = JSON.parse(localStorage.getItem("allTasks"))
+    let deleted = false;
+    let fil = list.filter(word => {
+           if (word === text && deleted === false) {
+        deleted = true; 
+        return false;  
+    }
+
+    return true; 
+
+    })
+    
+localStorage.setItem("allTasks",JSON.stringify(fil)) 
+let pre = JSON.parse(localStorage.getItem("allTasks"))
     });
 
 list.appendChild(tasitem)
@@ -94,36 +107,9 @@ document.body.addEventListener("keydown",(e)=>{
 
 
 
-checkbox.forEach(button => {
-   button.addEventListener("click",(e)=>{
-    let targetTask = e.target.parentElement;
-    targetTask.classList.toggle("line")
-    localStorage.setItem("claslist",'kidk')
-    
-})
-});
  
-Dalte.forEach(button => {
-    button.addEventListener("click", (e) => {
-        let targetTask = e.target.closest(".task-item");
-        
-        if (targetTask) {
-            let textToDelete = targetTask.querySelector("span").textContent;
-
-            targetTask.remove(); 
-
-            let tasks = JSON.parse(localStorage.getItem("allTasks")) || [];
-            let newTasks = tasks.filter(item => item !== textToDelete);
-            
-            localStorage.setItem("allTasks", JSON.stringify(newTasks));
-        }
-    });
-});
-
 
 displayTask()
 
 
 
-
-// i have do loop to the remove word to storge array
