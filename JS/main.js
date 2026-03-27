@@ -32,8 +32,7 @@ let button = document.createElement("button")
     icon.className = "fa-solid fa-trash"
            let l =  localStorage.getItem("classtorge")
 input.addEventListener("change", () => {
-    localStorage.setItem("classtorge",`line`) 
-
+    localStorage.setItem("classtorge",`line`)
         tasitem.classList.toggle(`line`); 
   if(!input.checked){
 localStorage.removeItem("classtorge")
@@ -108,6 +107,5 @@ document.body.addEventListener("keydown",(e)=>{
 
 
 displayTask()
-
 
 
